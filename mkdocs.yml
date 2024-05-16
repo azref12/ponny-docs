@@ -1,0 +1,14 @@
+site_name: Ponny - Docs
+site_url: http://ponny-api.co.id/
+
+theme : 
+    name : material
+    features : 
+      - search.suggest
+      - search.highlight
+      - content.tabs.link
+
+nav :
+  - Home : "index.md"
+  - Client :
+      - Get Datas : "client/process_get_data.md"

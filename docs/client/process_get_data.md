@@ -1,0 +1,34 @@
+#### For Loop
+
+To display this data, loops are used, if the amount of data displayed is only a small amount, there is no need to use loops. However, if the amount of data to be displayed is greater, repetition is needed to save time in data retrieval. 
+
+Loops used :
+```
+for data in list_of_obj :
+```
+``list_of_obj`` contains serializers from the client model used which will be displayed in looping form using an array. After that you can filtering data contains primary key from template client models with string data type.
+```
+filter(idclient=data['id'])
+```
+Then, use the if else statement to retrieve the required data using the greater equals operator (>=), by calling the model resulting from the previous data filtering using the .count() function.
+```
+if modeltemplate.count() >= 1 :
+```
+use the loop again using data from the results of filtering the primary key and add a new variable to store the array data that will be used to sort the data using the append() function, by entering several objects needed to be displayed in the response details.
+```
+card = []
+
+for datas in modeltemplate :
+
+    card.append({
+        "id" : datas.id,
+        "idclient" : datas.idclient_id,
+        "name_template" : datas.name_template,
+        "request" : datas.request,
+        "result" : datas.result,
+    })
+```
+
+#### PUT Method 
+
+For update this data, loops are used for update several data, if the amount of data displayed is only a small amount, there is no need to use loops. 
